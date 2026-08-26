@@ -5,7 +5,7 @@ tags:
 - tag2
 ---
 <center>
-<font size= "6">Aakash Kumar Datasheet</font><br>
+<font size= "6">(Your Name) Datasheet</font><br>
 as part of<br>
 <font size= "8"> Project Name</font><br>
 for<br>
@@ -16,7 +16,7 @@ for<br>
 
 ## Introduction
 
-#### type
+* This needs to be updated so that a reader gets an idea of the purpose of this datasheet.
 
 ### Project Summary
 
