@@ -1,7 +1,8 @@
-site_name: RAS 304 Aakash Kumar Data Sheet
-site_url: https://ras-embedded-systems.github.io/RAS304DataSheetTemplate/
-repo_url: https://github.com/ras-embedded-systems/RAS304DataSheetTemplate
+site_name: RAS 304 Aakash Kumar's Data Sheet
+site_url: https://ras-embedded-systems.github.io/RAS304DataSheet/
+repo_url: https://github.com/iicaros/akuma501_RAS304_F26
 edit_uri: edit/main/docs/
+
 theme:
   name: material
   custom_dir: custom_theme/
@@ -10,26 +11,26 @@ theme:
     accent: indigo
   font:
     text: Roboto
-  logo: static/logo304.svg
-  favicon: static/logo304.png
+  logo: static/monkeythink.webp
+  favicon: static/monkeythink.webp
 
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - toc.follow    
+    - toc.follow
     - navigation.top
     - navigation.path
     - navigation.indexes
     - navigation.prune
     - content.action.edit
     - navigation.footer
-#    - navigation.sections
-#    - navigation.expand
-#    - navigation.instant # doesn't work that well
+#   - navigation.sections
+#   - navigation.expand
+#   - navigation.instant
 
 markdown_extensions:
-  - attr_list #add attributes using curly brackets to images, see https://squidfunk.github.io/mkdocs-material/reference/images/
-  - md_in_html # see https://squidfunk.github.io/mkdocs-material/reference/images/
+  - attr_list
+  - md_in_html
   - footnotes
   - pymdownx.arithmatex:
       generic: true
@@ -44,21 +45,21 @@ draft_docs: |
   **/*_unpublished.md
   **/*_draft.md
   **/*_draft**
-  
+
 plugins:
   - search
-  - glightbox # allow resize images, see https://squidfunk.github.io/mkdocs-material/reference/images/
+  - glightbox
 
 extra_css:
-  - stylesheets/extra.css  
+  - stylesheets/extra.css
 
 extra_javascript:
- - javascripts/mathjax.js
- - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 not_in_nav: |
   static
-  
+
 copyright: "Copyright &copy; 2025 team-name-here"
 
 extra:
@@ -66,4 +67,4 @@ extra:
   social:
     - icon: fontawesome/regular/file-code
       link: /2025_fall
-      name: 2023 Site    
+      name: 2023 Site
