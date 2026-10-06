@@ -6,19 +6,13 @@ tags:
 ---
 
 ## Overview
-This needs to be updated with a brief purpose for having the block diagram.
-Things to mention are:
-* power levels
-* sensor
-* Actuator
-* team connections
-* Power source
-* ...
 
-To get some initial formatting help, one can view ["here"](https://embedded-systems-design.github.io/EGR304DataSheetTemplate/Appendix/basic-markdown-examples/) some basic techniques.
+Sensor: An ADXL335BCPZ will be used to capture 3-axis accelerometer captures motion and vibration data. The three signals are then ran through high-pass filters and peak detectors by using TLV9062 op-amps before entering the micro controller's ADC (RA0, RA6, RA5). 
+
+Power Source: Power is provided through a regulated 3.3V line for the accelerometer and a 5V supply from the PIC18F57Q43 Curiosity Nano powers the signal conditioning array.
+
+Team Connections: Connector 1 will run to our main hub (Sakiya: Board 1) which will then communicate the accelerometer slip detection data to the other boards to adjust the grip accordingly. Pins 1-4 provide digital feedback to the main control board.
 
 
-## Example Block Diagram 
-Showing an example of how to import a screenshot of the block diagram created outside of git and brought into a page.
-
-![Example of Indivial Block diagram ](individual-block-diagram.png)
+## Block Diagram 
+![Indivial Block diagram ](indivblockdiagram.png)
