@@ -565,10 +565,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-block-diagram" class="md-nav__link">
+  <a href="#block-diagram" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Block Diagram
+        Block Diagram
       
     </span>
   </a>
@@ -914,10 +914,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-block-diagram" class="md-nav__link">
+  <a href="#block-diagram" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Block Diagram
+        Block Diagram
       
     </span>
   </a>
@@ -1000,18 +1000,11 @@
   <h1>Individal Block Diagram</h1>
 
 <h2 id="overview">Overview</h2>
-<p>This needs to be updated with a brief purpose for having the block diagram.
-Things to mention are:
-* power levels
-* sensor
-* Actuator
-* team connections
-* Power source
-* ...</p>
-<p>To get some initial formatting help, one can view <a href="https://embedded-systems-design.github.io/EGR304DataSheetTemplate/Appendix/basic-markdown-examples/">"here"</a> some basic techniques.</p>
-<h2 id="example-block-diagram">Example Block Diagram</h2>
-<p>Showing an example of how to import a screenshot of the block diagram created outside of git and brought into a page.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../individual-block-diagram.png" data-desc-position="bottom"><img alt="Example of Indivial Block diagram " src="../individual-block-diagram.png"></a></p>
+<p>Sensor: An ADXL335BCPZ will be used to capture 3-axis accelerometer captures motion and vibration data. The three signals are then ran through high-pass filters and peak detectors by using TLV9062 op-amps before entering the micro controller's ADC (RA0, RA6, RA5). </p>
+<p>Power Source: Power is provided through a regulated 3.3V line for the accelerometer and a 5V supply from the PIC18F57Q43 Curiosity Nano powers the signal conditioning array.</p>
+<p>Team Connections: Connector 1 will run to our main hub (Sakiya: Board 1) which will then communicate the accelerometer slip detection data to the other boards to adjust the grip accordingly. Pins 1-4 provide digital feedback to the main control board.</p>
+<h2 id="block-diagram">Block Diagram</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../indivblockdiagram.png" data-desc-position="bottom"><img alt="Indivial Block diagram " src="../indivblockdiagram.png"></a></p>
 
 
 
