@@ -1277,7 +1277,7 @@
 <p>Analog Devices <code>ADXL335BCPZ</code> 3-Axis Analog Accelerometer</p>
 <p></p>
 <ul>
-<li>$ $8.88/each</li>
+<li>$8.88/each</li>
 <li><a href="https://www.digikey.com/en/products/detail/analog-devices-inc/ADXL335BCPZ/1999326">DigiKey Product Page</a></li>
 </ul>
 <table>
@@ -1297,7 +1297,7 @@
 <td>Needs extra capacitors on the board to set the filter frequency</td>
 </tr>
 <tr>
-<td>Good sensitivity for picking up small slip vibrations</td>
+<td>Good sensitivity for picking up small slip vibrations and in stock on DigiKey</td>
 <td>Only runs on 3.3V, so it needs a voltage regulator</td>
 </tr>
 </tbody>
@@ -1320,14 +1320,14 @@
 <tbody>
 <tr>
 <td>Can switch between two sensitivity modes</td>
-<td>Discontinued part</td>
+<td>Discontinued part with no pricing or stock available on DigiKey</td>
 </tr>
 <tr>
 <td>Outputs analog signals that work with our filter design</td>
 <td>Pads are hidden underneath the chip, making it hard to check solder joints</td>
 </tr>
 <tr>
-<td>Inexpensive and uses very little power</td>
+<td>Uses very little power while running</td>
 <td>Can max out too easily if the gripper moves fast</td>
 </tr>
 </tbody>
@@ -1349,16 +1349,16 @@
 </thead>
 <tbody>
 <tr>
-<td>Lowest price out of all the options</td>
+<td>Direct X, Y, and Z analog outputs that work with our filter stages</td>
+<td>Most expensive option at $19.54 and only available through a third-party broker (WinSource)</td>
+</tr>
+<tr>
+<td>Uses very low power (240 uA)</td>
 <td>Tiny 3mm x 3mm package is very difficult to place and solder</td>
 </tr>
 <tr>
-<td>Direct X, Y, and Z analog outputs</td>
-<td>More signal noise at lower vibration speeds</td>
-</tr>
-<tr>
-<td>Uses very low power</td>
-<td>Also requires a separate 3.3V power line</td>
+<td>Filter bandwidth can be adjusted with external capacitors</td>
+<td>More signal noise at lower vibration speeds and requires a 3.3V line</td>
 </tr>
 </tbody>
 </table>
@@ -1379,19 +1379,23 @@
 </thead>
 <tbody>
 <tr>
-<td>Has built-in tap and motion detection</td>
+<td>Least expensive in-stock accelerometer on DigiKey ($8.01)</td>
 <td>Outputs digital signals, so it will not work with our analog high-pass filters and peak detectors</td>
 </tr>
 <tr>
-<td>Mounts directly to the PCB with fewer extra parts</td>
+<td>Has built-in tap and motion detection</td>
 <td>Requires writing extra code to read data over SPI or I2C</td>
+</tr>
+<tr>
+<td>Mounts directly to the PCB with fewer extra parts</td>
+<td>Hidden pads underneath the package are hard to inspect after soldering</td>
 </tr>
 </tbody>
 </table>
 </li>
 </ol>
 <p><strong>Choice:</strong> Option 1: Analog Devices <code>ADXL335BCPZ</code></p>
-<p><strong>Rationale:</strong> We need an analog accelerometer that mounts directly onto our PCB and sends X, Y, and Z signals into our high-pass filters and peak detectors. The <code>ADXL335BCPZ</code> is easy to find in stock, picks up small vibrations well without maxing out when the gripper moves, and is easier to check for bad solder joints than the <code>MMA7361L</code> or <code>KXTC9-2050</code>.</p>
+<p><strong>Rationale:</strong> We need an analog accelerometer that mounts directly onto our PCB and sends X, Y, and Z signals into our high-pass filters and peak detectors. Unlike the <code>MMA7361L</code> (which is discontinued with no pricing) and the <code>KXTC9-2050</code> (which costs $19.54 from a third-party broker), the <code>ADXL335BCPZ</code> is reasonably priced ($8.88) and directly available on DigiKey. It also picks up small vibrations well without maxing out when the gripper moves, and is easier to check for bad solder joints.</p>
 <hr>
 <h3 id="signal-conditioning-op-amps-filter-peak-detection-subsystem"><strong>Signal Conditioning Op-Amps (Filter &amp; Peak Detection Subsystem)</strong></h3>
 <ol>
@@ -1412,7 +1416,7 @@
 <tbody>
 <tr>
 <td>Runs directly off our 5V line and uses the full voltage range for the ADC</td>
-<td>Costs a little more than basic op-amps</td>
+<td>Highest cost of the three op-amp options ($1.24 each vs. under $0.50)</td>
 </tr>
 <tr>
 <td>Fast enough to catch quick slip spikes accurately</td>
@@ -1420,7 +1424,7 @@
 </tr>
 <tr>
 <td>Holds the peak voltage steady until the microcontroller reads it</td>
-<td></td>
+<td>Surface-mount SOIC-8 package takes more care to solder than through-hole</td>
 </tr>
 </tbody>
 </table>
@@ -1441,7 +1445,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Comes in through-hole and surface-mount sizes that are easy to solder</td>
+<td>Comes in an easy-to-solder through-hole package</td>
 <td>Slower response speed might miss fast slip vibrations</td>
 </tr>
 <tr>
@@ -1449,7 +1453,7 @@
 <td>Less accurate, which can add small voltage errors across our filters</td>
 </tr>
 <tr>
-<td>Inexpensive and low power</td>
+<td>Very inexpensive ($0.45 each) and low power</td>
 <td></td>
 </tr>
 </tbody>
@@ -1471,7 +1475,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Very inexpensive and easy to find</td>
+<td>Lowest price ($0.33 each) and easy to find in stock</td>
 <td>Cuts off the top 1.5V of the signal, so we lose reading range on the ADC</td>
 </tr>
 <tr>
@@ -1483,7 +1487,7 @@
 </li>
 </ol>
 <p><strong>Choice:</strong> Option 1: Texas Instruments <code>TLV9062</code></p>
-<p><strong>Rationale:</strong> Each of our three axes goes through a high-pass filter and a peak detector, which takes 6 op-amp stages total. The <code>TLV9062</code> runs right off the 5V supply from the Curiosity Nano, catches fast vibration spikes, and keeps the peak detector voltage from dropping before the microcontroller's ADC reads it.</p>
+<p><strong>Rationale:</strong> Each of our three axes goes through a high-pass filter and a peak detector, which takes 6 op-amp stages total. Even though the <code>TLV9062</code> costs a little more ($1.24 each) than the <code>MCP6002</code> ($0.45) and <code>LM358P</code> ($0.33), it runs right off the 5V supply from the Curiosity Nano, catches fast vibration spikes, and keeps the peak detector voltage from dropping before the microcontroller's ADC reads it.</p>
 <hr>
 <h3 id="33v-voltage-regulator-power-supply-subsystem"><strong>3.3V Voltage Regulator (Power Supply Subsystem)</strong></h3>
 <ol>
@@ -1504,7 +1508,7 @@
 <tbody>
 <tr>
 <td>Outputs a steady 3.3V and provides way more current (800 mA) than our accelerometer needs</td>
-<td>Uses up to 10 mA of current just to stay on</td>
+<td>Most expensive regulator option ($1.27 each) and uses up to 10 mA just to stay on</td>
 </tr>
 <tr>
 <td>Can step 5V down to 3.3V without any issues</td>
@@ -1533,7 +1537,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Wastes almost no power while running</td>
+<td>Least expensive regulator option ($0.50 each) and wastes almost no power</td>
 <td>Will burn out if connected to anything over 6V</td>
 </tr>
 <tr>
@@ -1541,14 +1545,14 @@
 <td>Only supplies up to 250 mA and cannot handle as much heat</td>
 </tr>
 <tr>
-<td>Inexpensive and works with standard 1 uF capacitors</td>
+<td>Works with standard 1 uF ceramic capacitors</td>
 <td></td>
 </tr>
 </tbody>
 </table>
 </li>
 <li>
-<p>Texas Instruments <code>LM317T</code> Adjustable Regulator</p>
+<p>STMicroelectronics <code>LM317T</code> Adjustable Regulator</p>
 <p></p>
 <ul>
 <li>$1.13/each</li>
@@ -1568,14 +1572,14 @@
 </tr>
 <tr>
 <td>Rugged through-hole package</td>
-<td>Needs two extra resistors on the board just to set the voltage to 3.3V</td>
+<td>Almost as expensive as the <code>LD1117V33</code> ($1.13) plus needs two extra resistors to set the voltage</td>
 </tr>
 </tbody>
 </table>
 </li>
 </ol>
 <p><strong>Choice:</strong> Option 1: STMicroelectronics <code>LD1117V33</code></p>
-<p><strong>Rationale:</strong> Since our accelerometer needs 3.3V and our board gets 5V from the Curiosity Nano, we need a regulator that can drop 5V down to 3.3V. The <code>LD1117V33</code> does this reliably without needing extra resistors like the <code>LM317T</code>, and its large package is easy to solder onto our board.</p>
+<p><strong>Rationale:</strong> Since our accelerometer needs 3.3V and our board gets 5V from the Curiosity Nano, we need a regulator that can drop 5V down to 3.3V. The <code>LD1117V33</code> does this reliably without needing extra resistors like the <code>LM317T</code>, and its rugged TO-220 package is much harder to accidentally damage during testing than the smaller <code>MCP1700</code>.</p>
 <hr>
 <h3 id="external-power-source-power-supply-subsystem"><strong>External Power Source (Power Supply Subsystem)</strong></h3>
 <ol>
@@ -1596,11 +1600,11 @@
 <tbody>
 <tr>
 <td>Gives steady power (up to 1300 mA) without dying during testing</td>
-<td>Keeps the gripper plugged into a wall outlet</td>
+<td>Highest upfront cost ($17.71) out of the power options</td>
 </tr>
 <tr>
 <td>Easily powers the Curiosity Nano, op-amps, and 3.3V regulator</td>
-<td>Not portable</td>
+<td>Keeps the gripper plugged into a wall outlet and is not portable</td>
 </tr>
 </tbody>
 </table>
@@ -1621,7 +1625,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Lets us test the board without wall cords</td>
+<td>Lets us test the board without wall cords and costs less than the wall adapter ($11.99)</td>
 <td>Needs an extra 5V regulator before going into the board</td>
 </tr>
 <tr>
@@ -1647,7 +1651,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Inexpensive and easy to swap in for quick testing</td>
+<td>Lowest upfront cost ($2.75) and easy to swap in for quick testing</td>
 <td>Runs out after about 4.8 hours of use and cannot be recharged</td>
 </tr>
 <tr>
@@ -1659,7 +1663,7 @@
 </li>
 </ol>
 <p><strong>Choice:</strong> Option 1: Regulated 5V Supply from the PIC18F57Q43 Curiosity Nano / Main Hub (backed by the wall supply or a 9V battery for testing)</p>
-<p><strong>Rationale:</strong> Our board gets its 5V supply through the Curiosity Nano / Main Hub connection, which powers the <code>TLV9062</code> op-amps and feeds the 3.3V regulator for the accelerometer. Using the wall adapter gives us steady power when hooked up to Board 1, while a 9V battery can be used if we need to test for a few hours away from an outlet.</p>
+<p><strong>Rationale:</strong> Our board gets its 5V supply through the Curiosity Nano / Main Hub connection, which powers the <code>TLV9062</code> op-amps and feeds the 3.3V regulator for the accelerometer. Even though the wall adapter has a higher upfront price ($17.71), it gives us steady power when hooked up to Board 1 without worrying about dead batteries, while an inexpensive $2.75 9V battery can be used if we need to test away from an outlet.</p>
 <hr>
 <h2 id="pin-table">Pin Table</h2>
 <table>
