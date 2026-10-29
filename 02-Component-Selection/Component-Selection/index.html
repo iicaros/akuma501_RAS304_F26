@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../static/monkeythink.webp">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
             
 
     
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -620,15 +620,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-1-major-component-selections" class="md-nav__link">
+  <a href="#major-component-selections" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Part 1: Major Component Selections
+        Major Component Selections
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Part 1: Major Component Selections">
+    <nav class="md-nav" aria-label="Major Component Selections">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -681,26 +681,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pin-table" class="md-nav__link">
+  <a href="#power-budget" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pin Table
+        Power Budget
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-power-budget" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Part 2: Power Budget
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: Power Budget">
+    <nav class="md-nav" aria-label="Power Budget">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -760,6 +749,28 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pin-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pin Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-selection-rationale-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Selection Rationale Overview
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1047,15 +1058,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-1-major-component-selections" class="md-nav__link">
+  <a href="#major-component-selections" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Part 1: Major Component Selections
+        Major Component Selections
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Part 1: Major Component Selections">
+    <nav class="md-nav" aria-label="Major Component Selections">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1108,26 +1119,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pin-table" class="md-nav__link">
+  <a href="#power-budget" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pin Table
+        Power Budget
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-power-budget" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Part 2: Power Budget
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: Power Budget">
+    <nav class="md-nav" aria-label="Power Budget">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1187,6 +1187,28 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pin-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pin Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-selection-rationale-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Selection Rationale Overview
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1270,7 +1292,7 @@
 <p>Power Source: Power is provided through a regulated 3.3V line for the accelerometer and a 5V supply from the PIC18F57Q43 Curiosity Nano powers the signal conditioning array.</p>
 <p>Team Connections: Connector 1 will run to our main hub (Sakiya: Board 1) to send slip detection data to the other boards so they can adjust the grip. Pins 1-4 provide digital feedback and Pin 7 sends an analog signal to the main control board.</p>
 <hr>
-<h2 id="part-1-major-component-selections">Part 1: Major Component Selections</h2>
+<h2 id="major-component-selections">Major Component Selections</h2>
 <h3 id="3-axis-accelerometer-slip-detection-subsystem"><strong>3-Axis Accelerometer (Slip Detection Subsystem)</strong></h3>
 <ol>
 <li>
@@ -1663,94 +1685,8 @@
 </li>
 </ol>
 <p><strong>Choice:</strong> Option 1: Regulated 5V Supply from the PIC18F57Q43 Curiosity Nano / Main Hub (backed by the wall supply or a 9V battery for testing)</p>
-<p><strong>Rationale:</strong> Our board gets its 5V supply through the Curiosity Nano / Main Hub connection, which powers the <code>TLV9062</code> op-amps and feeds the 3.3V regulator for the accelerometer. Even though the wall adapter has a higher upfront price ($17.71), it gives us steady power when hooked up to Board 1 without worrying about dead batteries, while an inexpensive $2.75 9V battery can be used if we need to test away from an outlet.</p>
-<hr>
-<h2 id="pin-table">Pin Table</h2>
-<table>
-<thead>
-<tr>
-<th>MCU Pin</th>
-<th>Mode</th>
-<th>Direction</th>
-<th>Connected To</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>RA0</code></td>
-<td><code>ADC</code></td>
-<td>Input</td>
-<td>X-Axis Peak Detector</td>
-<td>Reads X-axis slip signal</td>
-</tr>
-<tr>
-<td><code>RA6</code></td>
-<td><code>ADC</code></td>
-<td>Input</td>
-<td>Y-Axis Peak Detector</td>
-<td>Reads Y-axis slip signal</td>
-</tr>
-<tr>
-<td><code>RA5</code></td>
-<td><code>ADC</code></td>
-<td>Input</td>
-<td>Z-Axis Peak Detector</td>
-<td>Reads Z-axis slip signal</td>
-</tr>
-<tr>
-<td><code>RA2</code></td>
-<td><code>DAC</code></td>
-<td>Output</td>
-<td>Connector 1 (Pin 7)</td>
-<td>Sends analog slip signal to Main Hub (Board 1)</td>
-</tr>
-<tr>
-<td><code>RA1</code></td>
-<td><code>Digital I/O</code></td>
-<td>Output</td>
-<td>Connector 1 (Pin 1)</td>
-<td>Digital feedback to Main Hub (Board 1)</td>
-</tr>
-<tr>
-<td><code>RC4</code></td>
-<td><code>Digital I/O</code></td>
-<td>Input</td>
-<td>Connector 1 (Pin 2)</td>
-<td>Digital input from Main Hub (Board 1)</td>
-</tr>
-<tr>
-<td><code>RB1</code></td>
-<td><code>Digital I/O</code></td>
-<td>Output</td>
-<td>Connector 1 (Pin 3)</td>
-<td>Digital feedback to Main Hub (Board 1)</td>
-</tr>
-<tr>
-<td><code>RB2</code></td>
-<td><code>Digital I/O</code></td>
-<td>Output</td>
-<td>Connector 1 (Pin 4)</td>
-<td>Digital feedback to Main Hub (Board 1)</td>
-</tr>
-<tr>
-<td><code>RD1</code></td>
-<td><code>Digital I/O</code></td>
-<td>Unused</td>
-<td>None</td>
-<td>Extra pin on block diagram</td>
-</tr>
-<tr>
-<td><code>RC7</code></td>
-<td><code>Digital I/O</code></td>
-<td>Unused</td>
-<td>None</td>
-<td>Extra pin on block diagram</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="part-2-power-budget">Part 2: Power Budget</h2>
+<p><strong>Rationale:</strong> Our board gets its 5V supply through the Curiosity Nano / Main Hub connection, which powers the <code>TLV9062</code> op-amps and feeds the 3.3V regulator for the accelerometer. Even though the wall adapter has a higher upfront price, it gives us steady power when hooked up to Board 1 without worrying about dead batteries, while an inexpensive $2.75 9V battery can be used if we need to test away from an outlet.</p>
+<h2 id="power-budget">Power Budget</h2>
 <h3 id="section-a-major-components-maximum-current">Section A: Major Components &amp; Maximum Current</h3>
 <table>
 <thead>
@@ -1893,6 +1829,98 @@
 <li><strong>Total Max Current:</strong> 104.57 mA</li>
 <li><strong>Worst-Case Battery Life:</strong> <code>500 mAh / 104.57 mA</code> = <strong>4.78 hours</strong></li>
 </ul>
+<h2 id="pin-table">Pin Table</h2>
+<table>
+<thead>
+<tr>
+<th>MCU Pin</th>
+<th>Mode</th>
+<th>Direction</th>
+<th>Connected To</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RA0</code></td>
+<td><code>ADC</code></td>
+<td>Input</td>
+<td>X-Axis Peak Detector</td>
+<td>Reads X-axis slip signal</td>
+</tr>
+<tr>
+<td><code>RA6</code></td>
+<td><code>ADC</code></td>
+<td>Input</td>
+<td>Y-Axis Peak Detector</td>
+<td>Reads Y-axis slip signal</td>
+</tr>
+<tr>
+<td><code>RA5</code></td>
+<td><code>ADC</code></td>
+<td>Input</td>
+<td>Z-Axis Peak Detector</td>
+<td>Reads Z-axis slip signal</td>
+</tr>
+<tr>
+<td><code>RA2</code></td>
+<td><code>DAC</code></td>
+<td>Output</td>
+<td>Connector 1 (Pin 7)</td>
+<td>Sends analog slip signal to Main Hub (Board 1)</td>
+</tr>
+<tr>
+<td><code>RA1</code></td>
+<td><code>Digital I/O</code></td>
+<td>Output</td>
+<td>Connector 1 (Pin 1)</td>
+<td>Digital feedback to Main Hub (Board 1)</td>
+</tr>
+<tr>
+<td><code>RC4</code></td>
+<td><code>Digital I/O</code></td>
+<td>Input</td>
+<td>Connector 1 (Pin 2)</td>
+<td>Digital input from Main Hub (Board 1)</td>
+</tr>
+<tr>
+<td><code>RB1</code></td>
+<td><code>Digital I/O</code></td>
+<td>Unused</td>
+<td>None</td>
+<td>Extra pin on block diagram</td>
+</tr>
+<tr>
+<td><code>RB2</code></td>
+<td><code>Digital I/O</code></td>
+<td>Unused</td>
+<td>None</td>
+<td>Extra pin on block diagram</td>
+</tr>
+<tr>
+<td><code>RD1</code></td>
+<td><code>Digital I/O</code></td>
+<td>Unused</td>
+<td>None</td>
+<td>Extra pin on block diagram</td>
+</tr>
+<tr>
+<td><code>RC7</code></td>
+<td><code>Digital I/O</code></td>
+<td>Unused</td>
+<td>None</td>
+<td>Extra pin on block diagram</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<h2 id="component-selection-rationale-overview">Component Selection Rationale Overview</h2>
+</blockquote>
+<p>To meet the requirements of creating this PCB Node, I selected the ADXL335BCPZ accelerometer, TLV9062 op-amps, and a 9V alkaline battery with a barrel jack connector. 
+The ADXL335BCPZ beat out its competitors due to being the most reasonably priced and readily available. 
+The TLV9062 was selected since it runs directly off the board's 5V rail. While a wall adapter is an option, having all five of our team members' boards plugged into the wall at the same time would be difficult to manage. 
+Instead, a 9V battery with a barrel jack connector feeds into our onboard L7805 regulator to provide a steady 5V for the system while allowing mobility. 
+From this 5V rail, a dedicated LD1117V33 voltage regulator steps the power down to safely supply 3.3V to the accelerometer.   </p>
 
 
 
@@ -2003,10 +2031,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "toc.follow", "navigation.top", "navigation.path", "navigation.indexes", "navigation.prune", "content.action.edit", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "toc.follow", "navigation.top", "navigation.path", "navigation.indexes", "navigation.prune", "content.action.edit", "navigation.footer"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
