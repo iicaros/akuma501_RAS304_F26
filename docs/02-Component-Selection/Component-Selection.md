@@ -15,7 +15,7 @@ Team Connections: Connector 1 will run to our main hub (Sakiya: Board 1) to send
 
 ---
 
-## Part 1: Major Component Selections
+## Major Component Selections
 
 ### **3-Axis Accelerometer (Slip Detection Subsystem)**
 
@@ -209,28 +209,10 @@ Team Connections: Connector 1 will run to our main hub (Sakiya: Board 1) to send
 
 **Choice:** Option 1: Regulated 5V Supply from the PIC18F57Q43 Curiosity Nano / Main Hub (backed by the wall supply or a 9V battery for testing)
 
-**Rationale:** Our board gets its 5V supply through the Curiosity Nano / Main Hub connection, which powers the `TLV9062` op-amps and feeds the 3.3V regulator for the accelerometer. Even though the wall adapter has a higher upfront price ($17.71), it gives us steady power when hooked up to Board 1 without worrying about dead batteries, while an inexpensive $2.75 9V battery can be used if we need to test away from an outlet.
+**Rationale:** Our board gets its 5V supply through the Curiosity Nano / Main Hub connection, which powers the `TLV9062` op-amps and feeds the 3.3V regulator for the accelerometer. Even though the wall adapter has a higher upfront price, it gives us steady power when hooked up to Board 1 without worrying about dead batteries, while an inexpensive $2.75 9V battery can be used if we need to test away from an outlet.
 
----
 
-## Pin Table
-
-| MCU Pin | Mode | Direction | Connected To | Description |
-| --- | --- | --- | --- | --- |
-| `RA0` | `ADC` | Input | X-Axis Peak Detector | Reads X-axis slip signal |
-| `RA6` | `ADC` | Input | Y-Axis Peak Detector | Reads Y-axis slip signal |
-| `RA5` | `ADC` | Input | Z-Axis Peak Detector | Reads Z-axis slip signal |
-| `RA2` | `DAC` | Output | Connector 1 (Pin 7) | Sends analog slip signal to Main Hub (Board 1) |
-| `RA1` | `Digital I/O` | Output | Connector 1 (Pin 1) | Digital feedback to Main Hub (Board 1) |
-| `RC4` | `Digital I/O` | Input | Connector 1 (Pin 2) | Digital input from Main Hub (Board 1) |
-| `RB1` | `Digital I/O` | Output | Connector 1 (Pin 3) | Digital feedback to Main Hub (Board 1) |
-| `RB2` | `Digital I/O` | Output | Connector 1 (Pin 4) | Digital feedback to Main Hub (Board 1) |
-| `RD1` | `Digital I/O` | Unused | None | Extra pin on block diagram |
-| `RC7` | `Digital I/O` | Unused | None | Extra pin on block diagram |
-
----
-
-## Part 2: Power Budget
+## Power Budget
 
 ### Section A: Major Components & Maximum Current
 
@@ -268,3 +250,27 @@ If running off a 500 mAh 9V battery with everything running at max current plus 
 - **Battery Capacity:** 500 mAh
 - **Total Max Current:** 104.57 mA
 - **Worst-Case Battery Life:** `500 mAh / 104.57 mA` = **4.78 hours**
+
+
+## Pin Table
+
+| MCU Pin | Mode | Direction | Connected To | Description |
+| --- | --- | --- | --- | --- |
+| `RA0` | `ADC` | Input | X-Axis Peak Detector | Reads X-axis slip signal |
+| `RA6` | `ADC` | Input | Y-Axis Peak Detector | Reads Y-axis slip signal |
+| `RA5` | `ADC` | Input | Z-Axis Peak Detector | Reads Z-axis slip signal |
+| `RA2` | `DAC` | Output | Connector 1 (Pin 7) | Sends analog slip signal to Main Hub (Board 1) |
+| `RA1` | `Digital I/O` | Output | Connector 1 (Pin 1) | Digital feedback to Main Hub (Board 1) |
+| `RC4` | `Digital I/O` | Input | Connector 1 (Pin 2) | Digital input from Main Hub (Board 1) |
+| `RB1` | `Digital I/O` | Unused | None | Extra pin on block diagram |
+| `RB2` | `Digital I/O` | Unused | None | Extra pin on block diagram |
+| `RD1` | `Digital I/O` | Unused | None | Extra pin on block diagram |
+| `RC7` | `Digital I/O` | Unused | None | Extra pin on block diagram |
+
+> ## Component Selection Rationale Overview
+
+To meet the requirements of creating this PCB Node, I selected the ADXL335BCPZ accelerometer, TLV9062 op-amps, and a 9V alkaline battery with a barrel jack connector. 
+The ADXL335BCPZ beat out its competitors due to being the most reasonably priced and readily available. 
+The TLV9062 was selected since it runs directly off the board's 5V rail. While a wall adapter is an option, having all five of our team members' boards plugged into the wall at the same time would be difficult to manage. 
+Instead, a 9V battery with a barrel jack connector feeds into our onboard L7805 regulator to provide a steady 5V for the system while allowing mobility. 
+From this 5V rail, a dedicated LD1117V33 voltage regulator steps the power down to safely supply 3.3V to the accelerometer.   
