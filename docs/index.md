@@ -22,6 +22,7 @@ The Smart Gripper we are constructing is an end-effector that uses a five-node a
 
 
 * Our team's website can be found [here](https://ras304-f26-team104.github.io/RAS304-F26-104/).
+* The Hardware BOM for this subsystem can be found [here](https://iicaros.github.io/akuma501_RAS304_F26/03-BOM/BOM/)
 
 
 ### My Contribution
