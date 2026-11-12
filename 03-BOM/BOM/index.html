@@ -767,8 +767,6 @@
       
         
       
-        
-      
     
     
     
@@ -1000,13 +998,13 @@
   <h1>Bill of Materials</h1>
 
 <h2 id="overview">Overview</h2>
-<p>This Bill of Materials covers every component on my slip-detection subsystem schematic (ADXL335 accelerometer, high-pass filters, peak detectors, power regulation, and the Curiosity Nano interface headers). Parts are grouped by supplier:</p>
+<p>This Bill of Materials covers every component on my slip-detection subsystem schematic: the LIS3DH accelerometer breakout (I2C), power regulation, debug LEDs and push button, test points, and the Curiosity Nano interface headers. Parts are grouped by supplier:</p>
 <ul>
-<li><strong>DigiKey</strong> – parts being ordered. Quantities follow the class rule of one for the breadboard, one for the PCB, and 1–2 spares, rounded up to a price break where that was cheaper.</li>
-<li><strong>TECH 162</strong> – parts taken from the lab inventory (not ordered).</li>
-<li><strong>On hand</strong> – parts I already own (not ordered).</li>
+<li><strong>DigiKey</strong>: parts being ordered. Quantities follow the class rule of one for the breadboard, one for the PCB, and 1-2 spares, rounded up to a price break where that was cheaper.</li>
+<li><strong>TECH 162</strong>: parts taken from the lab inventory (not ordered).</li>
+<li><strong>On hand</strong>: parts I already own (not ordered).</li>
 </ul>
-<p>All parts are through-hole except the ADXL335BCPZ accelerometer, which is only available in a 16-LFCSP surface-mount package. The Curiosity Nano board is not included because it is supplied separately.</p>
+<p>All parts are through-hole. The accelerometer is a SparkFun LIS3DH breakout with 0.1 in headers (approved by the instructor), which plugs directly into the PCB. The Curiosity Nano board is not included because it is supplied separately.</p>
 <h2 id="bill-of-materials">Bill of Materials</h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../BOM-Screenshot.png" data-desc-position="bottom"><img alt="" src="../BOM-Screenshot.png"></a>
 <strong>Figure 1:</strong> Bill of Materials spreadsheet.</p>
@@ -1032,32 +1030,32 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">3-axis analog accelerometer, +/-3 g, 16-LFCSP (4x4 mm), SMD</td>
+<td style="text-align: left;">SparkFun LIS3DH 3-axis accelerometer breakout with headers, I2C, 3.3 V, 0.1 in pins</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">$8.88</td>
-<td style="text-align: left;">$17.76</td>
-<td style="text-align: left;">Analog Devices</td>
-<td style="text-align: left;">ADXL335BCPZ</td>
+<td style="text-align: left;">$7.70</td>
+<td style="text-align: left;">$15.40</td>
+<td style="text-align: left;">SparkFun Electronics</td>
+<td style="text-align: left;">SEN-20659</td>
 <td style="text-align: left;">DigiKey</td>
-<td style="text-align: left;">505-ADXL335BCPZ-ND</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/analog-devices-inc/ADXL335BCPZ/1999326">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://www.analog.com/media/en/technical-documentation/data-sheets/adxl335.pdf">Datasheet</a></td>
-<td style="text-align: left;">U2</td>
+<td style="text-align: left;">1568-20659-ND</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/sparkfun-electronics/20659/21703932">DigiKey</a></td>
+<td style="text-align: left;"><a href="https://www.st.com/resource/en/datasheet/lis3dh.pdf">Datasheet</a></td>
+<td style="text-align: left;">U3</td>
 </tr>
 <tr>
-<td style="text-align: left;">Dual op-amp, rail-to-rail input/output, 10 MHz, 2.4-6 V, PDIP-8, through-hole</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">$1.25</td>
-<td style="text-align: left;">$7.50</td>
-<td style="text-align: left;">Microchip Technology</td>
-<td style="text-align: left;">MCP6292-E/P</td>
+<td style="text-align: left;">Female socket header, 1x6, 2.54 mm, through-hole (socket for LIS3DH breakout)</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">$0.42</td>
+<td style="text-align: left;">$1.68</td>
+<td style="text-align: left;">Sullins Connector Solutions</td>
+<td style="text-align: left;">PPTC061LFBN-RC</td>
 <td style="text-align: left;">DigiKey</td>
-<td style="text-align: left;">MCP6292-E/P-ND</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/microchip-technology/MCP6292-E-P/574102">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://ww1.microchip.com/downloads/en/DeviceDoc/21812e.pdf">Datasheet</a></td>
-<td style="text-align: left;">U3, U4, U5</td>
+<td style="text-align: left;">S7004-ND</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/sullins-connector-solutions/PPTC061LFBN-RC/810145">DigiKey</a></td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/sullins-connector-solutions/PPTC061LFBN-RC/810145">Datasheet</a></td>
+<td style="text-align: left;">U3 (socket)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Schottky diode, 40 V, 1 A, DO-41, axial</td>
@@ -1071,21 +1069,7 @@
 <td style="text-align: left;">1N5819-E3/54GICT-ND</td>
 <td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/1N5819-E3-54/1023527">DigiKey</a></td>
 <td style="text-align: left;"><a href="http://www.vishay.com/docs/88525/1n5817.pdf">Datasheet</a></td>
-<td style="text-align: left;">D1</td>
-</tr>
-<tr>
-<td style="text-align: left;">Small-signal switching diode, 100 V, 200 mA, DO-35, axial</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">$0.10</td>
-<td style="text-align: left;">$1.00</td>
-<td style="text-align: left;">onsemi</td>
-<td style="text-align: left;">1N4148TR</td>
-<td style="text-align: left;">DigiKey</td>
-<td style="text-align: left;">1N4148FSCT-ND</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/onsemi/1N4148TR/458811">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://www.onsemi.com/pdf/datasheet/1n914-d.pdf">Datasheet</a></td>
-<td style="text-align: left;">D3, D4, D5</td>
+<td style="text-align: left;">D2</td>
 </tr>
 <tr>
 <td style="text-align: left;">Tactile switch, SPST-NO, 6 x 6 mm, 50 mA 24 V, through-hole</td>
@@ -1103,17 +1087,17 @@
 </tr>
 <tr>
 <td style="text-align: left;">PC test point, miniature, red, through-hole</td>
-<td style="text-align: left;">19</td>
-<td style="text-align: left;">20</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">14</td>
 <td style="text-align: left;">$0.203</td>
-<td style="text-align: left;">$4.06</td>
+<td style="text-align: left;">$2.842</td>
 <td style="text-align: left;">Keystone Electronics</td>
 <td style="text-align: left;">5000</td>
 <td style="text-align: left;">DigiKey</td>
 <td style="text-align: left;">36-5000-ND</td>
 <td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/keystone-electronics/5000/255326">DigiKey</a></td>
 <td style="text-align: left;"><a href="https://www.keyelco.com/userAssets/file/M65p84.pdf">Datasheet</a></td>
-<td style="text-align: left;">TP1-TP19</td>
+<td style="text-align: left;">TP1-TP12</td>
 </tr>
 <tr>
 <td style="text-align: left;">0.33 uF ceramic capacitor, +/-10%, X7R, 50 V, radial</td>
@@ -1127,21 +1111,7 @@
 <td style="text-align: left;">399-4408-ND</td>
 <td style="text-align: left;"><a href="https://www.digikey.com/en/products/result?keywords=C330C334K5R5TA">DigiKey</a></td>
 <td style="text-align: left;"><a href="https://www.kemet.com/content/dam/kemet/lightning/documents/ec-content/KEM_C1002_X7R_GOLDMAX.pdf">Datasheet</a></td>
-<td style="text-align: left;">C7</td>
-</tr>
-<tr>
-<td style="text-align: left;">1 uF ceramic capacitor, +/-10%, X7R, 25 V, radial 5 mm</td>
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">$0.178</td>
-<td style="text-align: left;">$3.56</td>
-<td style="text-align: left;">TDK</td>
-<td style="text-align: left;">FG28X7R1E105KRT06</td>
-<td style="text-align: left;">DigiKey</td>
-<td style="text-align: left;">445-173583-1-ND</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/tdk-corporation/FG28X7R1E105KRT06/5803197">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/lead-mlcc/catalog/leadmlcc_halogenfree_fg_en.pdf">Datasheet</a></td>
-<td style="text-align: left;">C11-C17</td>
+<td style="text-align: left;">C3</td>
 </tr>
 <tr>
 <td style="text-align: left;">10 uF aluminum electrolytic capacitor, +/-20%, 25 V, radial 2 mm, 5 mm dia</td>
@@ -1155,7 +1125,7 @@
 <td style="text-align: left;">P5148-ND</td>
 <td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/panasonic-electronic-components/ECA-1EM100/245007">DigiKey</a></td>
 <td style="text-align: left;"><a href="https://industrial.panasonic.com/cdbs/www-data/pdf/RDF0000/ABA0000C1209.pdf">Datasheet</a></td>
-<td style="text-align: left;">C20, C21</td>
+<td style="text-align: left;">C1, C2</td>
 </tr>
 <tr>
 <td style="text-align: left;">3.3 V LDO regulator, 800 mA, TO-220</td>
@@ -1169,7 +1139,7 @@
 <td style="text-align: left;">497-1491-5-ND</td>
 <td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/stmicroelectronics/LD1117V33/586012">DigiKey</a></td>
 <td style="text-align: left;"><a href="https://www.st.com/resource/en/datasheet/ld1117.pdf">Datasheet</a></td>
-<td style="text-align: left;">U7</td>
+<td style="text-align: left;">U2</td>
 </tr>
 <tr>
 <td style="text-align: left;">DC barrel jack, 2.0 x 5.5 mm, right angle, through-hole</td>
@@ -1201,31 +1171,17 @@
 </tr>
 <tr>
 <td style="text-align: left;">0.1 uF ceramic capacitor, +/-10%, X7R, 50 V, radial 2.54 mm</td>
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">20</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">10</td>
 <td style="text-align: left;">$0.186</td>
-<td style="text-align: left;">$3.72</td>
+<td style="text-align: left;">$1.86</td>
 <td style="text-align: left;">KEMET</td>
 <td style="text-align: left;">C320C104K5R5TA</td>
 <td style="text-align: left;">DigiKey</td>
 <td style="text-align: left;">399-4264-ND</td>
 <td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/kemet/C320C104K5R5TA/818040">DigiKey</a></td>
 <td style="text-align: left;"><a href="https://www.kemet.com/content/dam/kemet/lightning/documents/ec-content/KEM_C1002_X7R_GOLDMAX.pdf">Datasheet</a></td>
-<td style="text-align: left;">C6, C8, C9, C10, C18, C19, C22</td>
-</tr>
-<tr>
-<td style="text-align: left;">IC socket, DIP-8, 0.3 in (7.62 mm), through-hole</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">Assmann WSW Components</td>
-<td style="text-align: left;">A-08-LC-TT</td>
-<td style="text-align: left;">TECH 162</td>
-<td style="text-align: left;">Lab stock</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/assmann-wsw-components/A-08-LC-TT/821740">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/assmann-wsw-components/A-08-LC-TT/821740">Datasheet</a></td>
-<td style="text-align: left;">U3, U4, U5 (sockets)</td>
+<td style="text-align: left;">C4, C5, C6, C7</td>
 </tr>
 <tr>
 <td style="text-align: left;">Fuse holder, 5 x 20 mm cartridge, PCB through-hole</td>
@@ -1267,7 +1223,7 @@
 <td style="text-align: left;">Own stock</td>
 <td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/stmicroelectronics/L7805CV/585964">DigiKey</a></td>
 <td style="text-align: left;"><a href="https://www.st.com/resource/en/datasheet/l78.pdf">Datasheet</a></td>
-<td style="text-align: left;">U6</td>
+<td style="text-align: left;">U1</td>
 </tr>
 <tr>
 <td style="text-align: left;">LED, green 569 nm, 3 mm (T-1), diffused, through-hole</td>
@@ -1281,7 +1237,7 @@
 <td style="text-align: left;">Own stock</td>
 <td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/lite-on-inc/LTL-4231N/214440">DigiKey</a></td>
 <td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/lite-on-inc/LTL-4231N/214440">Datasheet</a></td>
-<td style="text-align: left;">D2, D6</td>
+<td style="text-align: left;">D1, D3</td>
 </tr>
 <tr>
 <td style="text-align: left;">LED, red 625 nm, 3 mm (T-1), diffused, through-hole</td>
@@ -1295,7 +1251,7 @@
 <td style="text-align: left;">Own stock</td>
 <td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/lite-on-inc/LTL-4221N/214530">DigiKey</a></td>
 <td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/lite-on-inc/LTL-4221N/214530">Datasheet</a></td>
-<td style="text-align: left;">D7</td>
+<td style="text-align: left;">D4</td>
 </tr>
 <tr>
 <td style="text-align: left;">Resistor 1 kOhm, 5%, 1/4 W, carbon film, axial</td>
@@ -1312,32 +1268,18 @@
 <td style="text-align: left;">R1</td>
 </tr>
 <tr>
-<td style="text-align: left;">Resistor 33 kOhm, 5%, 1/4 W, carbon film, axial</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">Resistor 10 kOhm, 5%, 1/4 W, carbon film, axial</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">$0.00</td>
 <td style="text-align: left;">$0.00</td>
 <td style="text-align: left;">Stackpole Electronics</td>
-<td style="text-align: left;">CF14JT33K0</td>
+<td style="text-align: left;">CF14JT10K0</td>
 <td style="text-align: left;">On hand</td>
 <td style="text-align: left;">Own stock</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/result?keywords=CF14JT33K0">DigiKey</a></td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/result?keywords=CF14JT10K0">DigiKey</a></td>
 <td style="text-align: left;"><a href="https://www.seielect.com/catalog/sei-cf_cfm.pdf">Datasheet</a></td>
-<td style="text-align: left;">R2, R5</td>
-</tr>
-<tr>
-<td style="text-align: left;">Resistor 100 kOhm, 5%, 1/4 W, carbon film, axial</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">Stackpole Electronics</td>
-<td style="text-align: left;">CF14JT100K</td>
-<td style="text-align: left;">On hand</td>
-<td style="text-align: left;">Own stock</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/result?keywords=CF14JT100K">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://www.seielect.com/catalog/sei-cf_cfm.pdf">Datasheet</a></td>
-<td style="text-align: left;">R3, R4, R6, R7, R8, R9</td>
+<td style="text-align: left;">R2</td>
 </tr>
 <tr>
 <td style="text-align: left;">Resistor 220 Ohm, 5%, 1/4 W, carbon film, axial</td>
@@ -1351,43 +1293,15 @@
 <td style="text-align: left;">Own stock</td>
 <td style="text-align: left;"><a href="https://www.digikey.com/en/products/result?keywords=CF14JT220R">DigiKey</a></td>
 <td style="text-align: left;"><a href="https://www.seielect.com/catalog/sei-cf_cfm.pdf">Datasheet</a></td>
-<td style="text-align: left;">R10, R11</td>
-</tr>
-<tr>
-<td style="text-align: left;">Resistor 4.7 kOhm, 5%, 1/4 W, carbon film, axial</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">Stackpole Electronics</td>
-<td style="text-align: left;">CF14JT4K70</td>
-<td style="text-align: left;">On hand</td>
-<td style="text-align: left;">Own stock</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/result?keywords=CF14JT4K70">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://www.seielect.com/catalog/sei-cf_cfm.pdf">Datasheet</a></td>
-<td style="text-align: left;">R12, R13</td>
-</tr>
-<tr>
-<td style="text-align: left;">Resistor 10 kOhm, 5%, 1/4 W, carbon film, axial</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">Stackpole Electronics</td>
-<td style="text-align: left;">CF14JT10K0</td>
-<td style="text-align: left;">On hand</td>
-<td style="text-align: left;">Own stock</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/result?keywords=CF14JT10K0">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://www.seielect.com/catalog/sei-cf_cfm.pdf">Datasheet</a></td>
-<td style="text-align: left;">R14</td>
+<td style="text-align: left;">R3, R4</td>
 </tr>
 </tbody>
 </table>
 </details>
-<p><strong>DigiKey order total (before tax and shipping): $49.39</strong></p>
-<p><em>Total Cost = Qty Ordered × Unit Cost. TECH 162 and on-hand parts are listed at $0.00 because they are not purchased.</em></p>
-<p>Prices were taken from DigiKey on 11/10/2026 at the quantity tier being ordered.</p>
-<p>The spreadsheet version is available here: <a href="../AK_Bill_of_Materials.xlsx">AK_Bill_of_Materials.xlsx</a></p>
+<p><strong>DigiKey order total (before tax and shipping): $33.57</strong></p>
+<p><em>Total Cost = Qty Ordered x Unit Cost. TECH 162 and on-hand parts are listed at $0.00 because they are not purchased.</em></p>
+<p>Prices were taken from DigiKey on 11/12/2026 at the quantity tier being ordered.</p>
+<p>The spreadsheet version is available <a href="../ak_bom_304.xlsx">here</a>.</p>
 
 
 

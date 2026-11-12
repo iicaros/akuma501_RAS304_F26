@@ -15,7 +15,7 @@
         <link rel="prev" href="../../04-Schematic/schematic/">
       
       
-        <link rel="next" href="../new/">
+        <link rel="next" href="../../Appendix/">
       
       
         
@@ -663,8 +663,6 @@
       
         
       
-        
-      
     
     
     
@@ -798,10 +796,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resouces" class="md-nav__link">
+  <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Resouces
+        Resources
       
     </span>
   </a>
@@ -812,34 +810,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../new/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    New
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -964,10 +934,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resouces" class="md-nav__link">
+  <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Resouces
+        Resources
       
     </span>
   </a>
@@ -1050,15 +1020,16 @@
   <h1>Power Budget</h1>
 
 <h2 id="overview">Overview</h2>
-<p>The power budget for the Slip Detection Subsystem was created to verify that the power supply and regulators can support the chosen compnents in the circuit. It ensures that the L7805 5V and LD1117V33 3.3V regulators can safely power the Curiosity Nano, ADXL335BCPZ accelerometer, and TLV9062 operational amplifiers without exceeding their maximum ratings.</p>
+<p>The power budget for the Slip Detection Subsystem was created to verify that the power supply and regulators can support the chosen components in the circuit. It ensures that the L7805 5V and LD1117V33 3.3V regulators can safely power the Curiosity Nano, SparkFun LIS3DH accelerometer breakout, LEDs, and push button without exceeding their maximum ratings. The budget includes a 25% safety margin on each rail and accounts for the idle (quiescent) current drawn by both regulators.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../budget.png" data-desc-position="bottom"><img alt="budget" height:_300_="" src="../budget.png" style="" width:_350_=""></a></p>
 <h2 id="conclusions">Conclusions</h2>
 <p>The system safely operates within its limits.<br>
-<br>The total current draw on the 9V battery is 101.56 mA.
-<br>The max estimated battery life of the 9V battery is 4.92 hours.
-<br>Both voltage regulators have a significant overhead.</p>
-<h2 id="resouces">Resouces</h2>
-<p>The power budget as a PDF download is available <a href="../ak_powerbudget.pdf"><em>here</em></a>, and a Microsoft Excel Sheet <a href="../ak_powerbudget.xlsx"><em>here</em></a>.</p>
+<br>The total current draw on the 9V battery is 124.59 mA, leaving 375.41 mA of headroom.
+<br>The 3.3V rail requires only 2.50 mA, leaving 797.50 mA available on the LD1117V33.
+<br>The 5V rail requires 116.59 mA, leaving 883.41 mA available on the L7805.
+<br>The estimated worst-case battery life of the 9V battery is 4.01 hours, assuming the microcontroller draws its full 50 mA and both debug LEDs are always on.</p>
+<h2 id="resources">Resources</h2>
+<p>The power budget as a PDF download is available <a href="../ak_powerbudget.pdf"><em>here</em></a>, and a Microsoft Excel Sheet <a href="../ak_pb_304.xlsx"><em>here</em></a>.</p>
 
 
 
@@ -1114,13 +1085,13 @@
         
         
           
-          <a href="../new/" class="md-footer__link md-footer__link--next" aria-label="Next: New">
+          <a href="../../Appendix/" class="md-footer__link md-footer__link--next" aria-label="Next: Appendix - Main Page">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                New
+                Appendix - Main Page
               </div>
             </div>
             <div class="md-footer__button md-icon">

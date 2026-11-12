@@ -643,17 +643,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#signal-conditioning-op-amps-filter-peak-detection-subsystem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Signal Conditioning Op-Amps (Filter &amp; Peak Detection Subsystem)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#33v-voltage-regulator-power-supply-subsystem" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -669,78 +658,6 @@
     <span class="md-ellipsis">
       
         External Power Source (Power Supply Subsystem)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#power-budget" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Power Budget
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Power Budget">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#section-a-major-components-maximum-current" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Section A: Major Components &amp; Maximum Current
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#section-b-power-rails-25-safety-margin" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Section B: Power Rails &amp; 25% Safety Margin
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#section-c-voltage-regulator-selection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Section C: Voltage Regulator Selection
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#section-d-external-power-source-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Section D: External Power Source Check
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#section-e-battery-life-calculation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Section E: Battery Life Calculation
       
     </span>
   </a>
@@ -908,8 +825,6 @@
   
     
     
-      
-        
       
         
       
@@ -1081,17 +996,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#signal-conditioning-op-amps-filter-peak-detection-subsystem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Signal Conditioning Op-Amps (Filter &amp; Peak Detection Subsystem)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#33v-voltage-regulator-power-supply-subsystem" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1107,78 +1011,6 @@
     <span class="md-ellipsis">
       
         External Power Source (Power Supply Subsystem)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#power-budget" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Power Budget
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Power Budget">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#section-a-major-components-maximum-current" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Section A: Major Components &amp; Maximum Current
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#section-b-power-rails-25-safety-margin" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Section B: Power Rails &amp; 25% Safety Margin
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#section-c-voltage-regulator-selection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Section C: Voltage Regulator Selection
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#section-d-external-power-source-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Section D: External Power Source Check
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#section-e-battery-life-calculation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Section E: Battery Life Calculation
       
     </span>
   </a>
@@ -1288,16 +1120,15 @@
   <h1>Component Selection</h1>
 
 <h2 id="overview">Overview</h2>
-<p>Sensor: An ADXL335BCPZ will be used to capture 3-axis motion and vibration data when an object starts to slip. The three signals are ran through high-pass filters and peak detectors using TLV9062 op-amps before entering the microcontroller's ADC (RA0, RA6, RA5).</p>
-<p>Power Source: Power is provided through a regulated 3.3V line for the accelerometer and a 5V supply from the PIC18F57Q43 Curiosity Nano powers the signal conditioning array.</p>
-<p>Team Connections: Connector 1 will run to our main hub (Sakiya: Board 1) to send slip detection data to the other boards so they can adjust the grip. Pins 1-4 provide digital feedback and Pin 7 sends an analog signal to the main control board.</p>
+<p>Sensor: A SparkFun LIS3DH 3-axis accelerometer breakout (with headers) captures motion and vibration data when an object starts to slip. It talks to the PIC18F57Q43 over I2C (RB1 = SCL, RB2 = SDA), and its INT1 pin (RA0) can alert the microcontroller the moment a motion threshold is crossed. The original plan used an analog ADXL335BCPZ with op-amp filters and peak detectors; that design was dropped because the ADXL335BCPZ only comes in a surface-mount package (see below).</p>
+<p>Power Source: A 9V battery feeds the barrel jack and an onboard L7805 regulator, which provides 5V for the Curiosity Nano, LEDs, and push button. An LD1117V33 steps the 5V rail down to 3.3V for the accelerometer breakout and its I2C bus.</p>
+<p>Team Connections: The 2x4 interboard connector (J2) runs to our main hub (Sakiya: Board 1). Pin 1 receives UART data from the hub, Pin 2 sends UART data to the hub, Pin 3 carries the shared ESTOP signal, Pin 4 sends the SLIP_INT alert, and Pin 5 is ground.</p>
 <hr>
 <h2 id="major-component-selections">Major Component Selections</h2>
 <h3 id="3-axis-accelerometer-slip-detection-subsystem"><strong>3-Axis Accelerometer (Slip Detection Subsystem)</strong></h3>
 <ol>
 <li>
 <p>Analog Devices <code>ADXL335BCPZ</code> 3-Axis Analog Accelerometer</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/adxl335bcpz.png" data-desc-position="bottom"><img alt="" src="images/adxl335bcpz.png"></a></p>
 <ul>
 <li>$8.88/each</li>
 <li><a href="https://www.digikey.com/en/products/detail/analog-devices-inc/ADXL335BCPZ/1999326">DigiKey Product Page</a></li>
@@ -1311,11 +1142,11 @@
 </thead>
 <tbody>
 <tr>
-<td>Small size fits directly on our PCB without needing a separate daughterboard</td>
+<td>Small size fits directly on the PCB without needing a separate daughterboard</td>
 <td>Very small pins make it harder to solder by hand</td>
 </tr>
 <tr>
-<td>Outputs analog signals for X, Y, and Z axes to go straight into our filters</td>
+<td>Outputs analog signals for X, Y, and Z axes to go straight into the filters</td>
 <td>Needs extra capacitors on the board to set the filter frequency</td>
 </tr>
 <tr>
@@ -1327,7 +1158,6 @@
 </li>
 <li>
 <p>NXP <code>MMA7361LCR1</code> 3-Axis Analog Accelerometer</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/mma7361l.png" data-desc-position="bottom"><img alt="" src="images/mma7361l.png"></a></p>
 <ul>
 <li>$(no info)/each</li>
 <li><a href="https://www.digikey.com/en/products/detail/nxp-usa-inc/MMA7361LCR1/2508910">DigiKey Product Page</a></li>
@@ -1345,7 +1175,7 @@
 <td>Discontinued part with no pricing or stock available on DigiKey</td>
 </tr>
 <tr>
-<td>Outputs analog signals that work with our filter design</td>
+<td>Outputs analog signals that work with the filter design</td>
 <td>Pads are hidden underneath the chip, making it hard to check solder joints</td>
 </tr>
 <tr>
@@ -1357,7 +1187,6 @@
 </li>
 <li>
 <p>ROHM <code>KXTC9-2050-FR</code> 3-Axis Analog Accelerometer</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/kxtc9_2050.png" data-desc-position="bottom"><img alt="" src="images/kxtc9_2050.png"></a></p>
 <ul>
 <li>$19.54/each</li>
 <li><a href="https://www.win-source.net/products/detail/kionix-inc/kxtc9-2050-fr.html">WinSource Electronics Product Page</a></li>
@@ -1371,7 +1200,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Direct X, Y, and Z analog outputs that work with our filter stages</td>
+<td>Direct X, Y, and Z analog outputs that work with the filter stages</td>
 <td>Most expensive option at $19.54 and only available through a third-party broker (WinSource)</td>
 </tr>
 <tr>
@@ -1387,7 +1216,6 @@
 </li>
 <li>
 <p>Analog Devices <code>ADXL345BCCZ</code> 3-Axis Digital Accelerometer</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/adxl345bccz.png" data-desc-position="bottom"><img alt="" src="images/adxl345bccz.png"></a></p>
 <ul>
 <li>$8.01/each</li>
 <li><a href="https://www.digikey.com/en/products/detail/analog-devices-inc/ADXL345BCCZ/2034829">DigiKey Product Page</a></li>
@@ -1402,7 +1230,7 @@
 <tbody>
 <tr>
 <td>Least expensive in-stock accelerometer on DigiKey ($8.01)</td>
-<td>Outputs digital signals, so it will not work with our analog high-pass filters and peak detectors</td>
+<td>Outputs digital signals, so it will not work with the analog high-pass filters and peak detectors</td>
 </tr>
 <tr>
 <td>Has built-in tap and motion detection</td>
@@ -1415,18 +1243,11 @@
 </tbody>
 </table>
 </li>
-</ol>
-<p><strong>Choice:</strong> Option 1: Analog Devices <code>ADXL335BCPZ</code></p>
-<p><strong>Rationale:</strong> We need an analog accelerometer that mounts directly onto our PCB and sends X, Y, and Z signals into our high-pass filters and peak detectors. Unlike the <code>MMA7361L</code> (which is discontinued with no pricing) and the <code>KXTC9-2050</code> (which costs $19.54 from a third-party broker), the <code>ADXL335BCPZ</code> is reasonably priced ($8.88) and directly available on DigiKey. It also picks up small vibrations well without maxing out when the gripper moves, and is easier to check for bad solder joints.</p>
-<hr>
-<h3 id="signal-conditioning-op-amps-filter-peak-detection-subsystem"><strong>Signal Conditioning Op-Amps (Filter &amp; Peak Detection Subsystem)</strong></h3>
-<ol>
 <li>
-<p>Texas Instruments <code>TLV9062</code> Dual Op-Amp</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/tlv9062.png" data-desc-position="bottom"><img alt="" src="images/tlv9062.png"></a></p>
+<p>SparkFun <code>SEN-20659</code> Triple Axis Accelerometer Breakout - LIS3DH (with Headers)</p>
 <ul>
-<li>$1.24/each (3 chips needed for 6 total stages)</li>
-<li><a href="https://www.digikey.com/en/products/detail/texas-instruments/TLV9062IDR/7364940">DigiKey Product Page</a></li>
+<li>$7.70/each</li>
+<li><a href="https://www.digikey.com/en/products/detail/sparkfun-electronics/20659/21703932">DigiKey Product Page</a></li>
 </ul>
 <table>
 <thead>
@@ -1437,85 +1258,30 @@
 </thead>
 <tbody>
 <tr>
-<td>Runs directly off our 5V line and uses the full voltage range for the ADC</td>
-<td>Highest cost of the three op-amp options ($1.24 each vs. under $0.50)</td>
+<td>Comes with 0.1" through-hole headers, so it plugs into female sockets on the PCB with no surface-mount soldering</td>
+<td>Breakout board takes up more PCB space and height than a bare chip</td>
 </tr>
 <tr>
-<td>Fast enough to catch quick slip spikes accurately</td>
-<td>Uses slightly more power when idle than slower chips</td>
+<td>Digital I2C output removes the need for the high-pass filters, peak detectors, and op-amps</td>
+<td>Requires writing I2C code to configure the sensor and read data</td>
 </tr>
 <tr>
-<td>Holds the peak voltage steady until the microcontroller reads it</td>
-<td>Surface-mount SOIC-8 package takes more care to solder than through-hole</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Microchip <code>MCP6002-I/P</code> Dual Op-Amp</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/mcp6002.png" data-desc-position="bottom"><img alt="" src="images/mcp6002.png"></a></p>
-<ul>
-<li>$0.45/each (3 chips needed)</li>
-<li><a href="https://www.digikey.com/en/products/detail/microchip-technology/MCP6002-I-P/500875">DigiKey Product Page</a></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Pros</th>
-<th>Cons</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Comes in an easy-to-solder through-hole package</td>
-<td>Slower response speed might miss fast slip vibrations</td>
-</tr>
-<tr>
-<td>Works on our 5V rail with full voltage output</td>
-<td>Less accurate, which can add small voltage errors across our filters</td>
-</tr>
-<tr>
-<td>Very inexpensive ($0.45 each) and low power</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Texas Instruments <code>LM358P</code> Dual Op-Amp</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/lm358p.png" data-desc-position="bottom"><img alt="" src="images/lm358p.png"></a></p>
-<ul>
-<li>$0.33/each (3 chips needed)</li>
-<li><a href="https://www.digikey.com/en/products/detail/texas-instruments/LM358P/277042">DigiKey Product Page</a></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Pros</th>
-<th>Cons</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Lowest price ($0.33 each) and easy to find in stock</td>
-<td>Cuts off the top 1.5V of the signal, so we lose reading range on the ADC</td>
-</tr>
-<tr>
-<td>Easy-to-solder through-hole package</td>
-<td>Drains the peak detector capacitor too fast, making the signal drop before we can read it</td>
+<td>Built-in motion and free-fall interrupts (INT1) can flag a slip immediately; has its own I2C pull-ups and decoupling</td>
+<td>Limited DigiKey stock (22 at time of ordering) and must run on 3.3V (1.71V - 3.6V)</td>
 </tr>
 </tbody>
 </table>
 </li>
 </ol>
-<p><strong>Choice:</strong> Option 1: Texas Instruments <code>TLV9062</code></p>
-<p><strong>Rationale:</strong> Each of our three axes goes through a high-pass filter and a peak detector, which takes 6 op-amp stages total. Even though the <code>TLV9062</code> costs a little more ($1.24 each) than the <code>MCP6002</code> ($0.45) and <code>LM358P</code> ($0.33), it runs right off the 5V supply from the Curiosity Nano, catches fast vibration spikes, and keeps the peak detector voltage from dropping before the microcontroller's ADC reads it.</p>
+<p><strong>Original Choice:</strong> Option 1: Analog Devices <code>ADXL335BCPZ</code></p>
+<p><strong>Original Rationale:</strong> The original design needed an analog accelerometer that mounts directly onto the PCB and sends X, Y, and Z signals into the high-pass filters and peak detectors. Unlike the <code>MMA7361L</code> (which is discontinued with no pricing) and the <code>KXTC9-2050</code> (which costs $19.54 from a third-party broker), the <code>ADXL335BCPZ</code> is reasonably priced ($8.88) and directly available on DigiKey. It also picks up small vibrations well without maxing out when the gripper moves, and is easier to check for bad solder joints.</p>
+<p><strong>Final Choice:</strong> Option 5: SparkFun <code>SEN-20659</code> LIS3DH Breakout (with Headers)</p>
+<p><strong>Rationale for the Change:</strong> After the schematic review, the <code>ADXL335BCPZ</code> could not be used on this board. It only comes in a 4 mm x 4 mm surface-mount LFCSP package, and this PCB has to use through-hole parts. None of the other analog options solve this, since they are also small surface-mount packages. With instructor approval, an accelerometer breakout board was used instead. The SparkFun LIS3DH breakout (with headers) was chosen because its 0.1" through-hole pins plug directly into two 1x6 female headers on the PCB, it runs off the existing 3.3V regulator, and it costs less than the <code>ADXL335BCPZ</code> ($7.70 vs. $8.88). Because it outputs digital data over I2C, the op-amp high-pass filters and peak detectors were removed from the design, which cut the parts count and cost.</p>
 <hr>
 <h3 id="33v-voltage-regulator-power-supply-subsystem"><strong>3.3V Voltage Regulator (Power Supply Subsystem)</strong></h3>
 <ol>
 <li>
 <p>STMicroelectronics <code>LD1117V33</code> 3.3V Linear Regulator</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/ld1117v33.png" data-desc-position="bottom"><img alt="" src="images/ld1117v33.png"></a></p>
 <ul>
 <li>$1.27/each</li>
 <li><a href="https://www.digikey.com/en/products/detail/stmicroelectronics/LD1117V33/586012">DigiKey Product Page</a></li>
@@ -1529,7 +1295,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Outputs a steady 3.3V and provides way more current (800 mA) than our accelerometer needs</td>
+<td>Outputs a steady 3.3V and provides way more current (800 mA) than the accelerometer needs</td>
 <td>Most expensive regulator option ($1.27 each) and uses up to 10 mA just to stay on</td>
 </tr>
 <tr>
@@ -1545,7 +1311,6 @@
 </li>
 <li>
 <p>Microchip <code>MCP1700-3302E/TO</code> 3.3V Linear Regulator</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/mcp1700.png" data-desc-position="bottom"><img alt="" src="images/mcp1700.png"></a></p>
 <ul>
 <li>$0.50/each</li>
 <li><a href="https://www.digikey.com/en/products/detail/microchip-technology/MCP1700-3302E-TO/652680">DigiKey Product Page</a></li>
@@ -1575,7 +1340,6 @@
 </li>
 <li>
 <p>STMicroelectronics <code>LM317T</code> Adjustable Regulator</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/lm317t.png" data-desc-position="bottom"><img alt="" src="images/lm317t.png"></a></p>
 <ul>
 <li>$1.13/each</li>
 <li><a href="https://www.digikey.com/en/products/detail/stmicroelectronics/LM317T/591677">DigiKey Product Page</a></li>
@@ -1590,7 +1354,7 @@
 <tbody>
 <tr>
 <td>Can handle high current (1.5A) and wide input voltages</td>
-<td>Needs at least 5.3V input to make 3.3V, so it will not work properly off our 5V line</td>
+<td>Needs at least 5.3V input to make 3.3V, so it will not work properly off the 5V line</td>
 </tr>
 <tr>
 <td>Rugged through-hole package</td>
@@ -1601,13 +1365,12 @@
 </li>
 </ol>
 <p><strong>Choice:</strong> Option 1: STMicroelectronics <code>LD1117V33</code></p>
-<p><strong>Rationale:</strong> Since our accelerometer needs 3.3V and our board gets 5V from the Curiosity Nano, we need a regulator that can drop 5V down to 3.3V. The <code>LD1117V33</code> does this reliably without needing extra resistors like the <code>LM317T</code>, and its rugged TO-220 package is much harder to accidentally damage during testing than the smaller <code>MCP1700</code>.</p>
+<p><strong>Rationale:</strong> Since the accelerometer needs 3.3V and the board's main rail is 5V (from the onboard L7805 regulator), a regulator is needed that can drop 5V down to 3.3V. The <code>LD1117V33</code> does this reliably without needing extra resistors like the <code>LM317T</code>, and its rugged TO-220 package is much harder to accidentally damage during testing than the smaller <code>MCP1700</code>.</p>
 <hr>
 <h3 id="external-power-source-power-supply-subsystem"><strong>External Power Source (Power Supply Subsystem)</strong></h3>
 <ol>
 <li>
 <p>CUI Inc <code>SWI12-9-N-P5</code> Regulated Wall Supply (via Main Hub / Curiosity Nano 5V Line)</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/wall_adapter_9v.png" data-desc-position="bottom"><img alt="" src="images/wall_adapter_9v.png"></a></p>
 <ul>
 <li>$17.71/each</li>
 <li><a href="https://www.digikey.com/en/products/detail/cui-inc./SWI12-9-N-P5/102-3428-ND/5287237">DigiKey Product Page</a></li>
@@ -1625,7 +1388,7 @@
 <td>Highest upfront cost ($17.71) out of the power options</td>
 </tr>
 <tr>
-<td>Easily powers the Curiosity Nano, op-amps, and 3.3V regulator</td>
+<td>Easily powers the Curiosity Nano, accelerometer, and 3.3V regulator</td>
 <td>Keeps the gripper plugged into a wall outlet and is not portable</td>
 </tr>
 </tbody>
@@ -1633,7 +1396,6 @@
 </li>
 <li>
 <p>Tenergy 9V 600mAh Rechargeable Li-Ion Battery (<code>30003</code>)</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/tenergy_9v.png" data-desc-position="bottom"><img alt="" src="images/tenergy_9v.png"></a></p>
 <ul>
 <li>$11.99/each</li>
 <li><a href="https://www.digikey.com/en/products/detail/tenergy-corporation/30003/16634139">DigiKey Product Page</a></li>
@@ -1647,7 +1409,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Lets us test the board without wall cords and costs less than the wall adapter ($11.99)</td>
+<td>Allows testing the board without wall cords and costs less than the wall adapter ($11.99)</td>
 <td>Needs an extra 5V regulator before going into the board</td>
 </tr>
 <tr>
@@ -1659,7 +1421,6 @@
 </li>
 <li>
 <p>Energizer <code>EN22</code> 9V Alkaline Battery</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/energizer_9v.png" data-desc-position="bottom"><img alt="" src="images/energizer_9v.png"></a></p>
 <ul>
 <li>$2.75/each</li>
 <li><a href="https://www.digikey.com/en/products/detail/energizer-battery-company/EN22/706980">DigiKey Product Page</a></li>
@@ -1684,151 +1445,8 @@
 </table>
 </li>
 </ol>
-<p><strong>Choice:</strong> Option 1: Regulated 5V Supply from the PIC18F57Q43 Curiosity Nano / Main Hub (backed by the wall supply or a 9V battery for testing)</p>
-<p><strong>Rationale:</strong> Our board gets its 5V supply through the Curiosity Nano / Main Hub connection, which powers the <code>TLV9062</code> op-amps and feeds the 3.3V regulator for the accelerometer. Even though the wall adapter has a higher upfront price, it gives us steady power when hooked up to Board 1 without worrying about dead batteries, while an inexpensive $2.75 9V battery can be used if we need to test away from an outlet.</p>
-<h2 id="power-budget">Power Budget</h2>
-<h3 id="section-a-major-components-maximum-current">Section A: Major Components &amp; Maximum Current</h3>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Function</th>
-<th>Qty</th>
-<th>Voltage</th>
-<th>Max Current (Each)</th>
-<th>Total Max Current</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ADXL335BCPZ</code></td>
-<td>3-Axis Accelerometer</td>
-<td>1</td>
-<td>3.3V</td>
-<td>0.35 mA</td>
-<td>0.35 mA</td>
-</tr>
-<tr>
-<td><code>TLV9062</code></td>
-<td>Op-Amp Array (6 stages / 3 dual chips)</td>
-<td>3</td>
-<td>5.0V</td>
-<td>6.30 mA</td>
-<td>18.90 mA</td>
-</tr>
-<tr>
-<td><code>PIC18F57Q43</code> Curiosity Nano</td>
-<td>Microcontroller</td>
-<td>1</td>
-<td>5.0V</td>
-<td>50.00 mA</td>
-<td>50.00 mA</td>
-</tr>
-</tbody>
-</table>
-<h3 id="section-b-power-rails-25-safety-margin">Section B: Power Rails &amp; 25% Safety Margin</h3>
-<table>
-<thead>
-<tr>
-<th>Power Rail</th>
-<th>Components on Rail</th>
-<th>Current Sum</th>
-<th>+25% Safety Margin</th>
-<th>Total Rail Current Needed</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>3.3V Rail</strong></td>
-<td><code>ADXL335BCPZ</code> (0.35 mA)</td>
-<td>0.35 mA</td>
-<td>x 1.25</td>
-<td><strong>0.44 mA</strong></td>
-</tr>
-<tr>
-<td><strong>5.0V Rail</strong></td>
-<td>3x <code>TLV9062</code> (18.90 mA) + <code>PIC18F57Q43</code> Nano (50.00 mA)</td>
-<td>68.90 mA</td>
-<td>x 1.25</td>
-<td><strong>86.13 mA</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="section-c-voltage-regulator-selection">Section C: Voltage Regulator Selection</h3>
-<table>
-<thead>
-<tr>
-<th>Power Rail</th>
-<th>Regulator / Source Choice</th>
-<th>Input Voltage</th>
-<th>Output Voltage</th>
-<th>Max Current Rating</th>
-<th>Regulator Idle Current</th>
-<th>Total Current Needed</th>
-<th>Remaining Current Available</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>3.3V Rail</strong></td>
-<td><code>LD1117V33</code> Regulator</td>
-<td>5.0V</td>
-<td>3.3V</td>
-<td>800 mA</td>
-<td>10.0 mA</td>
-<td>0.44 mA</td>
-<td><strong>+799.56 mA</strong></td>
-</tr>
-<tr>
-<td><strong>5.0V Rail</strong></td>
-<td>5V Supply from Curiosity Nano / Hub</td>
-<td>5.0V</td>
-<td>5.0V</td>
-<td>500 mA</td>
-<td>0 mA</td>
-<td>96.57 mA (86.13 + 0.44 + 10.0 mA)</td>
-<td><strong>+403.43 mA</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="section-d-external-power-source-check">Section D: External Power Source Check</h3>
-<table>
-<thead>
-<tr>
-<th>External Power Source</th>
-<th>Connected Rails</th>
-<th>Voltage</th>
-<th>Max Source Current</th>
-<th>Total System Current Needed</th>
-<th>Remaining Current Available</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Main Hub / Curiosity Nano 5V Supply (<code>SWI12-9-N-P5</code> Wall Adapter)</strong></td>
-<td>5.0V Rail &amp; 3.3V Regulator</td>
-<td>5.0V / 9.0V</td>
-<td>500 mA (Nano) / 1300 mA (Wall)</td>
-<td><strong>96.57 mA</strong></td>
-<td><strong>+403.43 mA</strong> (Positive / Safe)</td>
-</tr>
-<tr>
-<td><strong>9V Battery (<code>EN22</code> 500 mAh with 5V Regulator)</strong></td>
-<td>5.0V Rail &amp; 3.3V Regulator</td>
-<td>9.0V</td>
-<td>500 mA</td>
-<td><strong>104.57 mA</strong> (includes 8 mA for 5V regulator)</td>
-<td><strong>+395.43 mA</strong> (Positive / Safe)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="section-e-battery-life-calculation">Section E: Battery Life Calculation</h3>
-<p>If running off a 500 mAh 9V battery with everything running at max current plus the 25% safety margin:</p>
-<ul>
-<li><strong>Battery Capacity:</strong> 500 mAh</li>
-<li><strong>Total Max Current:</strong> 104.57 mA</li>
-<li><strong>Worst-Case Battery Life:</strong> <code>500 mAh / 104.57 mA</code> = <strong>4.78 hours</strong></li>
-</ul>
+<p><strong>Choice:</strong> Option 3: 9V Alkaline Battery through the barrel jack</p>
+<p><strong>Rationale:</strong> Having all five team boards plugged into wall outlets at the same time would be difficult to manage, so each board runs from its own 9V battery through a barrel jack. The onboard L7805 regulator turns the 9V into a steady 5V for the Curiosity Nano, LEDs, and push button, and the LD1117V33 then supplies 3.3V to the accelerometer breakout. The battery is inexpensive, easy to swap, and keeps the gripper portable.</p>
 <h2 id="pin-table">Pin Table</h2>
 <table>
 <thead>
@@ -1842,85 +1460,92 @@
 </thead>
 <tbody>
 <tr>
-<td><code>RA0</code></td>
-<td><code>ADC</code></td>
-<td>Input</td>
-<td>X-Axis Peak Detector</td>
-<td>Reads X-axis slip signal</td>
-</tr>
-<tr>
-<td><code>RA6</code></td>
-<td><code>ADC</code></td>
-<td>Input</td>
-<td>Y-Axis Peak Detector</td>
-<td>Reads Y-axis slip signal</td>
-</tr>
-<tr>
-<td><code>RA5</code></td>
-<td><code>ADC</code></td>
-<td>Input</td>
-<td>Z-Axis Peak Detector</td>
-<td>Reads Z-axis slip signal</td>
-</tr>
-<tr>
-<td><code>RA2</code></td>
-<td><code>DAC</code></td>
+<td><code>RB1</code></td>
+<td><code>I2C SCL</code></td>
 <td>Output</td>
-<td>Connector 1 (Pin 7)</td>
-<td>Sends analog slip signal to Main Hub (Board 1)</td>
+<td>LIS3DH Breakout (SCL), J3 Pin 5</td>
+<td>I2C clock to the accelerometer (3.3V bus)</td>
+</tr>
+<tr>
+<td><code>RB2</code></td>
+<td><code>I2C SDA</code></td>
+<td>Bidirectional</td>
+<td>LIS3DH Breakout (SDA), J3 Pin 6</td>
+<td>I2C data to/from the accelerometer (3.3V bus)</td>
+</tr>
+<tr>
+<td><code>RA0</code></td>
+<td><code>Digital I/O</code> (interrupt-on-change)</td>
+<td>Input</td>
+<td>LIS3DH Breakout (INT1)</td>
+<td>Motion/slip interrupt from the accelerometer</td>
 </tr>
 <tr>
 <td><code>RA1</code></td>
 <td><code>Digital I/O</code></td>
 <td>Output</td>
-<td>Connector 1 (Pin 1)</td>
-<td>Digital feedback to Main Hub (Board 1)</td>
+<td>J2 Pin 4 (SLIP_INT)</td>
+<td>Slip alert to Main Hub (Board 1)</td>
+</tr>
+<tr>
+<td><code>RA2</code></td>
+<td><code>UART TX</code></td>
+<td>Output</td>
+<td>J2 Pin 2 (UART_TX)</td>
+<td>Serial data to Main Hub (Board 1)</td>
 </tr>
 <tr>
 <td><code>RC4</code></td>
+<td><code>UART RX</code></td>
+<td>Input</td>
+<td>J2 Pin 1 (UART_RX)</td>
+<td>Serial data from Main Hub (Board 1)</td>
+</tr>
+<tr>
+<td><code>RB0</code></td>
+<td><code>Digital I/O</code> (interrupt)</td>
+<td>Input</td>
+<td>J2 Pin 3 (ESTOP)</td>
+<td>Shared emergency stop from Main Hub</td>
+</tr>
+<tr>
+<td><code>RA4</code></td>
 <td><code>Digital I/O</code></td>
 <td>Input</td>
-<td>Connector 1 (Pin 2)</td>
-<td>Digital input from Main Hub (Board 1)</td>
+<td>Push button SW1 (10k pull-up)</td>
+<td>Test slip alert / clear alert (reads low when pressed)</td>
 </tr>
 <tr>
-<td><code>RB1</code></td>
+<td><code>RD0</code></td>
 <td><code>Digital I/O</code></td>
-<td>Unused</td>
-<td>None</td>
-<td>Extra pin on block diagram</td>
-</tr>
-<tr>
-<td><code>RB2</code></td>
-<td><code>Digital I/O</code></td>
-<td>Unused</td>
-<td>None</td>
-<td>Extra pin on block diagram</td>
+<td>Output</td>
+<td>Green debug LED (D3)</td>
+<td>Status indicator</td>
 </tr>
 <tr>
 <td><code>RD1</code></td>
 <td><code>Digital I/O</code></td>
-<td>Unused</td>
-<td>None</td>
-<td>Extra pin on block diagram</td>
+<td>Output</td>
+<td>Red debug LED (D4)</td>
+<td>Slip / fault indicator</td>
 </tr>
 <tr>
-<td><code>RC7</code></td>
+<td><code>RA3, RA7, RB3, RB5, RC0, RC1, RC2, RC3, RC5, RD3, RD4, RD5</code></td>
 <td><code>Digital I/O</code></td>
 <td>Unused</td>
-<td>None</td>
-<td>Extra pin on block diagram</td>
+<td>J3 Extra Header (EH1-EH12)</td>
+<td>Spare GPIO for debugging and expansion</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
 <h2 id="component-selection-rationale-overview">Component Selection Rationale Overview</h2>
 </blockquote>
-<p>To meet the requirements of creating this PCB Node, I selected the ADXL335BCPZ accelerometer, TLV9062 op-amps, and a 9V alkaline battery with a barrel jack connector. 
-The ADXL335BCPZ beat out its competitors due to being the most reasonably priced and readily available. 
-The TLV9062 was selected since it runs directly off the board's 5V rail. While a wall adapter is an option, having all five of our team members' boards plugged into the wall at the same time would be difficult to manage. 
-Instead, a 9V battery with a barrel jack connector feeds into our onboard L7805 regulator to provide a steady 5V for the system while allowing mobility. 
-From this 5V rail, a dedicated LD1117V33 voltage regulator steps the power down to safely supply 3.3V to the accelerometer.   </p>
+<p>To meet the requirements of creating this PCB Node, I selected a SparkFun LIS3DH accelerometer breakout, an LD1117V33 3.3V regulator, and a 9V alkaline battery with a barrel jack connector.
+The ADXL335BCPZ was originally chosen because it was the most reasonably priced and readily available analog accelerometer, but it only comes in a surface-mount package, which the through-hole PCB cannot use. With instructor approval, it was replaced by the SparkFun LIS3DH breakout, which plugs into female headers on the PCB and sends its data digitally over I2C. This removed the need for op-amp filters and peak detectors.
+While a wall adapter is an option, having all five of our team members' boards plugged into the wall at the same time would be difficult to manage.
+Instead, a 9V battery with a barrel jack connector feeds into the onboard L7805 regulator to provide a steady 5V for the system while allowing mobility.
+From this 5V rail, a dedicated LD1117V33 voltage regulator steps the power down to safely supply 3.3V to the accelerometer breakout.</p>
 
 
 
